@@ -20,6 +20,13 @@ const App = () => {
   }, []);
   console.log(data?.results[0]);
 
+  async function getData2() {
+    const api = `https://randomuser.me/api/`;
+    const result = await fetch(api);
+    const getResult = await result.json();
+    setData(getResult);
+  }
+
   return (
   <>
   <h1 className="text-center">Generate Random User</h1>
@@ -27,7 +34,7 @@ const App = () => {
   <div className="col-lg-1 col-sm-2"></div>
     <div className="col-lg-3 col-sm-5">
     <div className="card">
-    <img data-aos="fade-right" className="card-img-top m-sm-5" src={data?.results[0].picture.large} alt=""/>
+    <img data-aos="fade-right" className="card-img-top m-sm-5 userImage" src={data?.results[0].picture.large} alt=""/>
       <div className="card-body">
       <h4 className="card-title text-center text-dark">{data?.results[0].name.title}. {data?.results[0].name.first} {data?.results[0].name.last}</h4>
       </div>
@@ -44,9 +51,13 @@ const App = () => {
     <h5 data-aos="fade-left">Id: {data?.results[0].login.uuid}</h5>
     <h5 data-aos="fade-up" data-aos-delay="500">Password: {data?.results[0].login.password}</h5>
     <h5 data-aos="fade-up">Join at: {data?.results[0].registered.date}</h5>
+    <div class="d-grid gap-2 col-6 mt-5">
+    <button className="btn btn-outline-dark" onClick={getData2}>Next</button>
+    </div>
     </div>
     <div className="col-1"></div>
   </div>
+  <h6 className="text-center text-white bg-dark fixed-bottom mb-0">This Application is developed by Praveen with <img src="logo192.png" alt="" className="developerIcon"/></h6>
   </>
   )
 };

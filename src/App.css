@@ -8,6 +8,17 @@ body{
 .card{
     box-shadow: 2px 2px 2px 2px #758283;
 }
-img{
+
+.userImage{
     box-shadow: 2px 0px 2px 2px #758283;
 }
+
+.developerIcon{
+    width: 2%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .developerIcon{
+      width: 9%;
+    }
+  }
