@@ -1,0 +1,13 @@
+.row{
+    margin-right: 0;
+}
+body{
+    background-color: #CAD5E2;
+    color: white;
+}
+.card{
+    box-shadow: 2px 2px 2px 2px #758283;
+}
+img{
+    box-shadow: 2px 0px 2px 2px #758283;
+}
